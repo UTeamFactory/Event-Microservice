@@ -1,13 +1,15 @@
 package com.example.eventmicroservice.command.application.handlers;
 
+import com.example.eventmicroservice.command.application.infrastructure.EventRegistryRepository;
 import org.axonframework.config.ProcessingGroup;
 import org.springframework.stereotype.Component;
 
 @Component
-@ProcessingGroup("artworkRegistry")
+@ProcessingGroup("eventRegistry")
 public class EventEventHandler {
-    private final EventRegistryRepository artworkRegistryRepository;
-    public ArtworkEventHandler(ArtworkRegistryRepository artworkRegistryRepository){
-        this.artworkRegistryRepository = artworkRegistryRepository;
+    private final EventRegistryRepository eventRegistryRepository;
+    public EventEventHandler(EventRegistryRepository eventRegistryRepository){
+        this.eventRegistryRepository = eventRegistryRepository;
     }
+
 }
