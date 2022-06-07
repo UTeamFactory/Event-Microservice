@@ -1,4 +1,4 @@
-package com.example.eventmicroservice.command.application.infrastructure;
+package com.example.eventmicroservice.command.infrastructure;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

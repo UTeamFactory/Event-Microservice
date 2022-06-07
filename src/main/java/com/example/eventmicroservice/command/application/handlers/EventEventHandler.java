@@ -1,7 +1,7 @@
 package com.example.eventmicroservice.command.application.handlers;
 
-import com.example.eventmicroservice.command.application.infrastructure.EventRegistry;
-import com.example.eventmicroservice.command.application.infrastructure.EventRegistryRepository;
+import com.example.eventmicroservice.command.infrastructure.EventRegistry;
+import com.example.eventmicroservice.command.infrastructure.EventRegistryRepository;
 import com.example.eventmicroservice.contracts.events.EventDeleted;
 import com.example.eventmicroservice.contracts.events.EventEdited;
 import com.example.eventmicroservice.contracts.events.EventRegistered;

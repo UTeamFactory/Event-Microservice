@@ -6,10 +6,10 @@ import com.example.eventmicroservice.command.application.dtos.request.EditEventR
 import com.example.eventmicroservice.command.application.dtos.response.CreateEventResponse;
 import com.example.eventmicroservice.command.application.dtos.response.DeleteEventResponse;
 import com.example.eventmicroservice.command.application.dtos.response.EditEventResponse;
-import com.example.eventmicroservice.command.application.infrastructure.EventRegistryRepository;
 import com.example.eventmicroservice.command.application.validators.CreateEventValidator;
 import com.example.eventmicroservice.command.application.validators.DeleteEventValidator;
 import com.example.eventmicroservice.command.application.validators.EditEventValidator;
+import com.example.eventmicroservice.command.infrastructure.EventRegistryRepository;
 import com.example.eventmicroservice.common.application.Notification;
 import com.example.eventmicroservice.common.application.Result;
 import com.example.eventmicroservice.common.application.ResultType;

@@ -1,8 +1,8 @@
 package com.example.eventmicroservice.command.application.validators;
 
 import com.example.eventmicroservice.command.application.dtos.request.EditEventRequest;
-import com.example.eventmicroservice.command.application.infrastructure.EventRegistryRepository;
 import com.example.eventmicroservice.command.domain.entities.Event;
+import com.example.eventmicroservice.command.infrastructure.EventRegistryRepository;
 import com.example.eventmicroservice.common.application.Notification;
 import org.axonframework.messaging.unitofwork.DefaultUnitOfWork;
 import org.axonframework.messaging.unitofwork.UnitOfWork;

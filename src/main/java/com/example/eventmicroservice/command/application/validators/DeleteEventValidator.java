@@ -1,7 +1,7 @@
 package com.example.eventmicroservice.command.application.validators;
 
 import com.example.eventmicroservice.command.application.dtos.request.DeleteEventRequest;
-import com.example.eventmicroservice.command.application.infrastructure.EventRegistryRepository;
+import com.example.eventmicroservice.command.infrastructure.EventRegistryRepository;
 import com.example.eventmicroservice.common.application.Notification;
 import org.springframework.stereotype.Component;
 
