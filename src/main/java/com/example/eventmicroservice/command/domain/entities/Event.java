@@ -52,7 +52,7 @@ public class Event {
     }
 
     @CommandHandler
-    public Event(EditEvent command){
+    public void handle(EditEvent command){
         Instant now = Instant.now();
         apply(
                 new EventEdited(
@@ -71,7 +71,7 @@ public class Event {
     }
 
     @CommandHandler
-    public Event(DeleteEvent command){
+    public void handle(DeleteEvent command){
         Instant now = Instant.now();
         apply(
                 new EventDeleted(

@@ -99,7 +99,6 @@ public class EventApplicationService {
         if (resultType == ResultType.FAILURE) {
             throw new Exception();
         }
-        System.out.println("services2");
         EditEventResponse editEventResponseDto = new EditEventResponse(
                 editEvent.getEventId(),
                 editEvent.getArtistId(),
