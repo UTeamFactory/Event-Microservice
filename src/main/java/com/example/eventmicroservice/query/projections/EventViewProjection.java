@@ -21,7 +21,6 @@ public class EventViewProjection {
     public void on(EventRegistered event){
         EventView eventView = new EventView(
                 event.getEventId(),
-                event.getArtistId(),
                 event.getType(),
                 event.getDescription(),
                 event.getDateTime(),

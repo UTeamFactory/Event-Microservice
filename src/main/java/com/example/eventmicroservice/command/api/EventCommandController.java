@@ -18,9 +18,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Console;
+
 @RestController
 @RequestMapping("/events")
-@Tag(name = "Event")
+@Tag(name = "Events")
 public class EventCommandController {
     private final EventApplicationService eventApplicationService;
     private final CommandGateway commandGateway;
@@ -51,12 +53,16 @@ public class EventCommandController {
             editEventRequest.setEventId(eventId);
             Result<EditEventResponse, Notification> result = eventApplicationService.edit(editEventRequest);
             if (result.isSuccess()) {
+                System.out.print("hola1");
                 return ApiController.ok(result.getSuccess());
             }
+            System.out.print("hola2");
             return ApiController.error(result.getFailure().getErrors());
         } catch (AggregateNotFoundException exception) {
+            System.out.print("error2");
             return ApiController.notFound();
         } catch (Exception e) {
+            System.out.print("error3");
             return ApiController.serverError();
         }
     }

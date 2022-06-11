@@ -20,23 +20,23 @@ public class EditEventValidator {
         this.eventRepository = eventRepository;
     }
 
-    public Notification validate(EditEventRequest editArtworkRequest) {
+    public Notification validate(EditEventRequest editEventRequest) {
         Notification notification = new Notification();
-        String eventId = editArtworkRequest.getEventId().trim();
+        String eventId = editEventRequest.getEventId().trim();
         if(eventId.isEmpty()) {
             notification.addError("Event id is required");
         }
         loadEventAggregate(eventId);
 
-        String description = editArtworkRequest.getDescription().trim();
+        String description = editEventRequest.getDescription().trim();
         if (description.isEmpty()) {
             notification.addError("Event description is required");
         }
-        String cost = editArtworkRequest.getCost().trim();
+        String cost = editEventRequest.getCost().trim();
         if (cost.isEmpty()) {
             notification.addError("Event cost is required");
         }
-        String type = editArtworkRequest.getType().trim();
+        String type = editEventRequest.getType().trim();
         if (type.isEmpty()) {
             notification.addError("Event type is required");
         }

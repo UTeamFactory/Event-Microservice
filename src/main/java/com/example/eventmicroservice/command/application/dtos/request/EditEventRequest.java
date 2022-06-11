@@ -1,7 +1,6 @@
 package com.example.eventmicroservice.command.application.dtos.request;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Calendar;
 

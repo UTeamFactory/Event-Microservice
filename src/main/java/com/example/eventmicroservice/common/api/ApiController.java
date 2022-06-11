@@ -1,5 +1,6 @@
 package com.example.eventmicroservice.common.api;
 
+import com.example.eventmicroservice.common.application.Error;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 

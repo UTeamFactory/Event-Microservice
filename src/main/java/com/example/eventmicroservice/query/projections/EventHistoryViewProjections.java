@@ -20,7 +20,6 @@ public class EventHistoryViewProjections {
     public void on(EventRegistered event){
         EventHistoryView eventHistoryView = new EventHistoryView(
                 event.getEventId(),
-                event.getArtistId(),
                 event.getType(),
                 event.getDescription(),
                 event.getDateTime(),
@@ -40,7 +39,6 @@ public class EventHistoryViewProjections {
             EventHistoryView eventHistoryView = eventHistoryViewOptional.get();
             eventHistoryView = new EventHistoryView(eventHistoryView);
 
-            eventHistoryView.setArtistId(event.getArtistId());
             eventHistoryView.setType(event.getType());
             eventHistoryView.setDescription(event.getDescription());
             eventHistoryView.setDateTime(event.getDateTime());

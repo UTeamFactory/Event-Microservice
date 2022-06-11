@@ -19,6 +19,7 @@ import com.example.eventmicroservice.contracts.commands.RegisterEvent;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.stereotype.Component;
 
+import java.io.Console;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
@@ -80,7 +81,6 @@ public class EventApplicationService {
         if (notification.hasErrors()) {
             return Result.failure(notification);
         }
-        String eventId = UUID.randomUUID().toString();
         EditEvent editEvent = new EditEvent(
                 editEventRequest.getEventId().trim(),
                 editEventRequest.getArtistId().trim(),
@@ -92,12 +92,14 @@ public class EventApplicationService {
                 editEventRequest.getLink().trim(),
                 editEventRequest.getCapacity()
                 );
+
         CompletableFuture<Object> future = commandGateway.send(editEvent);
         CompletableFuture<ResultType> futureResult = future.handle((ok, ex) -> (ex != null) ? ResultType.FAILURE : ResultType.SUCCESS);
         ResultType resultType = futureResult.get();
         if (resultType == ResultType.FAILURE) {
             throw new Exception();
         }
+        System.out.println("services2");
         EditEventResponse editEventResponseDto = new EditEventResponse(
                 editEvent.getEventId(),
                 editEvent.getArtistId(),

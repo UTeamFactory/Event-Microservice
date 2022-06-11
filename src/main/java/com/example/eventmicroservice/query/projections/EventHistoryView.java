@@ -19,8 +19,6 @@ public class EventHistoryView {
     private Long eventHistoryId;
     @Getter @Setter
     private String eventId;
-    @Column(length = 36) @Getter @Setter
-    private String artistId;
     @Column(length = 75) @Getter @Setter
     private String type;
     @Column(length = 200) @Getter @Setter
@@ -44,9 +42,8 @@ public class EventHistoryView {
 
     public EventHistoryView(){}
 
-    public EventHistoryView(String eventId, String artistId, String type, String description, Calendar dateTime, String cost, String image, String link,  String capacity, Instant createdAt) {
+    public EventHistoryView(String eventId, String type, String description, Calendar dateTime, String cost, String image, String link,  String capacity, Instant createdAt) {
         this.eventId = eventId;
-        this.artistId = artistId;
         this.type = type;
         this.description = description;
         this.dateTime = dateTime;
@@ -59,7 +56,6 @@ public class EventHistoryView {
 
     public EventHistoryView(EventHistoryView eventHistoryView) {
         this.eventId = eventHistoryView.getEventId();
-        this.artistId = eventHistoryView.getArtistId();
         this.type = eventHistoryView.getType();
         this.description = eventHistoryView.getDescription();
         this.dateTime = eventHistoryView.getDateTime();
