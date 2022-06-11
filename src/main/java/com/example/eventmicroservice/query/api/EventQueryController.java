@@ -18,8 +18,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/event")
-@Tag(name="Event")
+@RequestMapping("/events")
+@Tag(name="Events")
 public class EventQueryController {
 
     private final EventViewRepository eventViewRepository;

@@ -4,9 +4,11 @@ import com.example.eventmicroservice.contracts.events.EventDeleted;
 import com.example.eventmicroservice.contracts.events.EventEdited;
 import com.example.eventmicroservice.contracts.events.EventRegistered;
 import org.axonframework.eventhandling.EventHandler;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class EventViewProjection {
 
     private final EventViewRepository eventViewRepository;
