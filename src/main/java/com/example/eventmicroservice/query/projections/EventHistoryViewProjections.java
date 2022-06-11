@@ -21,13 +21,13 @@ public class EventHistoryViewProjections {
         EventHistoryView eventHistoryView = new EventHistoryView(
                 event.getEventId(),
                 event.getArtistId(),
+                event.getType(),
                 event.getDescription(),
                 event.getDateTime(),
-                event.getImage(),
-                event.getCapacity(),
                 event.getCost(),
-                event.getType(),
+                event.getImage(),
                 event.getLink(),
+                event.getCapacity(),
                 event.getOccurredOn()
         );
         eventHistoryViewRepository.save(eventHistoryView);
@@ -44,10 +44,10 @@ public class EventHistoryViewProjections {
             eventHistoryView.setType(event.getType());
             eventHistoryView.setDescription(event.getDescription());
             eventHistoryView.setDateTime(event.getDateTime());
-            eventHistoryView.setLink(event.getLink());
-            eventHistoryView.setImage(event.getImage());
-            eventHistoryView.setCapacity(event.getCapacity());
             eventHistoryView.setCost(event.getCost());
+            eventHistoryView.setImage(event.getImage());
+            eventHistoryView.setLink(event.getLink());
+            eventHistoryView.setCapacity(event.getCapacity());
             eventHistoryView.setCreatedAt(event.getOccurredOn());
 
             eventHistoryViewRepository.save(eventHistoryView);

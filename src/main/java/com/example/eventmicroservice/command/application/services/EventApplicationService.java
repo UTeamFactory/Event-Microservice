@@ -47,14 +47,14 @@ public class EventApplicationService {
         RegisterEvent createEvent = new RegisterEvent(
                 eventId,
                 createEventRequest.getArtistId().trim(),
-                createEventRequest.getDescription().trim(),
                 createEventRequest.getType().trim(),
+                createEventRequest.getDescription().trim(),
                 createEventRequest.getDateTime(),
                 createEventRequest.getCost().trim(),
-                createEventRequest.getCapacity(),
+                createEventRequest.getImage().trim(),
                 createEventRequest.getLink().trim(),
-                createEventRequest.getImage().trim()
-        );
+                createEventRequest.getCapacity()
+                );
         CompletableFuture<Object> future = commandGateway.send(createEvent);
         CompletableFuture<ResultType> futureResult = future.handle((ok, ex) -> (ex != null) ? ResultType.FAILURE : ResultType.SUCCESS);
         ResultType resultType = futureResult.get();
@@ -64,12 +64,12 @@ public class EventApplicationService {
         CreateEventResponse createEventResponseDto = new CreateEventResponse(
                 createEvent.getEventId(),
                 createEvent.getArtistId(),
-                createEvent.getDescription(),
                 createEvent.getType(),
+                createEvent.getDescription(),
                 createEvent.getDateTime(),
                 createEvent.getCost(),
-                createEvent.getLink(),
                 createEvent.getImage(),
+                createEvent.getLink(),
                 createEvent.getCapacity()
         );
         return Result.success(createEventResponseDto);
@@ -84,14 +84,14 @@ public class EventApplicationService {
         EditEvent editEvent = new EditEvent(
                 editEventRequest.getEventId().trim(),
                 editEventRequest.getArtistId().trim(),
-                editEventRequest.getDescription().trim(),
                 editEventRequest.getType().trim(),
+                editEventRequest.getDescription().trim(),
                 editEventRequest.getDateTime(),
                 editEventRequest.getCost().trim(),
-                editEventRequest.getCapacity(),
+                editEventRequest.getImage().trim(),
                 editEventRequest.getLink().trim(),
-                editEventRequest.getImage().trim()
-        );
+                editEventRequest.getCapacity()
+                );
         CompletableFuture<Object> future = commandGateway.send(editEvent);
         CompletableFuture<ResultType> futureResult = future.handle((ok, ex) -> (ex != null) ? ResultType.FAILURE : ResultType.SUCCESS);
         ResultType resultType = futureResult.get();
@@ -101,12 +101,12 @@ public class EventApplicationService {
         EditEventResponse editEventResponseDto = new EditEventResponse(
                 editEvent.getEventId(),
                 editEvent.getArtistId(),
-                editEvent.getDescription(),
                 editEvent.getType(),
+                editEvent.getDescription(),
                 editEvent.getDateTime(),
                 editEvent.getCost(),
-                editEvent.getLink(),
                 editEvent.getImage(),
+                editEvent.getLink(),
                 editEvent.getCapacity()
         );
         return Result.success(editEventResponseDto);

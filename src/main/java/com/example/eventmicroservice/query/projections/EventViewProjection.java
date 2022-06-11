@@ -21,12 +21,12 @@ public class EventViewProjection {
                 event.getEventId(),
                 event.getArtistId(),
                 event.getType(),
+                event.getDescription(),
                 event.getDateTime(),
                 event.getCost(),
-                event.getCapacity(),
-                event.getLink(),
                 event.getImage(),
-                event.getDescription(),
+                event.getLink(),
+                event.getCapacity(),
                 event.getOccurredOn()
         );
         eventViewRepository.save(eventView);
@@ -41,8 +41,8 @@ public class EventViewProjection {
             eventView.setDescription(event.getDescription());
             eventView.setDateTime(event.getDateTime());
             eventView.setCost(event.getCost());
-            eventView.setLink(event.getLink());
             eventView.setImage(event.getImage());
+            eventView.setLink(event.getLink());
             eventView.setCapacity(event.getCapacity());
             eventView.setUpdatedAt(event.getOccurredOn());
             eventViewRepository.save(eventView);

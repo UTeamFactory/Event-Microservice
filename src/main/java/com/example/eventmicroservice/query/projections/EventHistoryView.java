@@ -23,18 +23,18 @@ public class EventHistoryView {
     private String artistId;
     @Column(length = 75) @Getter @Setter
     private String type;
+    @Column(length = 200) @Getter @Setter
+    private String description;
     @Column() @Getter @Setter
     private Calendar dateTime;
     @Column() @Getter @Setter
     private String cost;
-    @Column(length = 200) @Getter @Setter
-    private String description;
-
-    @Column(length = 200) @Getter @Setter
-    private String link;
 
     @Column() @Getter @Setter
     private String image;
+
+    @Column(length = 200) @Getter @Setter
+    private String link;
 
     @Column() @Getter @Setter
     private String capacity;
@@ -44,15 +44,15 @@ public class EventHistoryView {
 
     public EventHistoryView(){}
 
-    public EventHistoryView(String eventId, String artistId, String type, Calendar dateTime, String cost, String description, String link, String image, String capacity, Instant createdAt) {
+    public EventHistoryView(String eventId, String artistId, String type, String description, Calendar dateTime, String cost, String image, String link,  String capacity, Instant createdAt) {
         this.eventId = eventId;
         this.artistId = artistId;
         this.type = type;
+        this.description = description;
         this.dateTime = dateTime;
         this.cost = cost;
-        this.description = description;
-        this.link = link;
         this.image = image;
+        this.link = link;
         this.capacity = capacity;
         this.createdAt = createdAt;
     }
@@ -61,11 +61,11 @@ public class EventHistoryView {
         this.eventId = eventHistoryView.getEventId();
         this.artistId = eventHistoryView.getArtistId();
         this.type = eventHistoryView.getType();
+        this.description = eventHistoryView.getDescription();
         this.dateTime = eventHistoryView.getDateTime();
         this.cost = eventHistoryView.getCost();
-        this.description = eventHistoryView.getDescription();
-        this.link = eventHistoryView.getLink();
         this.image = eventHistoryView.getImage();
+        this.link = eventHistoryView.getLink();
         this.capacity = eventHistoryView.getCapacity();
         this.createdAt = eventHistoryView.getCreatedAt();
     }

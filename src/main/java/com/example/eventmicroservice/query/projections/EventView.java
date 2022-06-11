@@ -19,18 +19,17 @@ public class EventView {
     private String artistId;
     @Column(length = 75) @Getter @Setter
     private String type;
+    @Column(length = 200) @Getter @Setter
+    private String description;
     @Column() @Getter @Setter
     private Calendar dateTime;
     @Column() @Getter @Setter
     private String cost;
-    @Column(length = 200) @Getter @Setter
-    private String description;
+    @Column() @Getter @Setter
+    private String image;
 
     @Column(length = 200) @Getter @Setter
     private String link;
-
-    @Column() @Getter @Setter
-    private String image;
 
     @Column() @Getter @Setter
     private String capacity;
@@ -43,15 +42,15 @@ public class EventView {
 
     public EventView(){}
 
-    public EventView(String eventId, String artistId, String type, Calendar dateTime, String cost, String description, String link, String image, String capacity, Instant createdAt) {
+    public EventView(String eventId, String artistId, String type, String description, Calendar dateTime, String cost, String image, String link, String capacity, Instant createdAt) {
         this.eventId = eventId;
         this.artistId = artistId;
         this.type = type;
+        this.description = description;
         this.dateTime = dateTime;
         this.cost = cost;
-        this.description = description;
-        this.link = link;
         this.image = image;
+        this.link = link;
         this.capacity = capacity;
         this.createdAt = createdAt;
     }
