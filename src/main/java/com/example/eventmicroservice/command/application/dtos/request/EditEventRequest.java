@@ -10,8 +10,8 @@ public class EditEventRequest {
     private @Getter String type;
     private @Getter String description;
     private @Getter Calendar dateTime;
-    private @Getter String cost;
+    private @Getter Double cost;
     private @Getter String image;
     private @Getter String link;
-    private @Getter String capacity;
+    private @Getter Double capacity;
 }

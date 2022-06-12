@@ -10,8 +10,8 @@ public class CreateEventRequest {
     private String type;
     private String description;
     private Calendar dateTime;
-    private String cost;
+    private Double cost;
     private String image;
     private String link;
-    private String capacity;
+    private Double capacity;
 }

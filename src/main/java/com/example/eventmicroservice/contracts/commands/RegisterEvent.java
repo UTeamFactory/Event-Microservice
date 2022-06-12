@@ -13,10 +13,10 @@ public class RegisterEvent {
     private String type;
     private String description;
     private Calendar dateTime;
-    private String cost;
+    private Double cost;
     private String image;
     private String link;
-    private String capacity;
+    private Double capacity;
 
     public String getEventId() {
         return eventId;
@@ -38,7 +38,7 @@ public class RegisterEvent {
         return dateTime;
     }
 
-    public String getCost() {
+    public Double getCost() {
         return cost;
     }
 
@@ -50,11 +50,11 @@ public class RegisterEvent {
         return link;
     }
 
-    public String getCapacity() {
+    public Double getCapacity() {
         return capacity;
     }
 
-    public RegisterEvent(String eventId, String artistId, String type, String description, Calendar dateTime, String cost, String image, String link, String capacity) {
+    public RegisterEvent(String eventId, String artistId, String type, String description, Calendar dateTime, Double cost, String image, String link, Double capacity) {
         this.eventId = eventId;
         this.artistId = artistId;
         this.type = type;

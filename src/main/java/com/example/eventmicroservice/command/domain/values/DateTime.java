@@ -5,26 +5,22 @@ import com.example.eventmicroservice.common.application.Result;
 import lombok.Value;
 
 import javax.persistence.Embeddable;
+import java.time.Instant;
+import java.util.Calendar;
 
 @Embeddable
 @Value
 public class DateTime {
-    private String value;
+    private Calendar value;
 
-    public DateTime(String dateTime) { value = dateTime; }
-
+    public DateTime(Calendar dateTime) { value = dateTime; }
+    Calendar now = Calendar.getInstance();
     protected DateTime() {
-        this.value = "";
+        this.value = now;
     }
 
-    public static Result<DateTime, Notification> create(String dateTime) {
+    public static Result<DateTime, Notification> create(Calendar dateTime) {
         Notification notification = new Notification();
-        dateTime = dateTime == null ? "" : dateTime.trim();
-
-        if (dateTime.isEmpty()) {
-            notification.addError("DateTime is required", null);
-            return Result.failure(notification);
-        }
         return  Result.success(new DateTime(dateTime));
     }
 }

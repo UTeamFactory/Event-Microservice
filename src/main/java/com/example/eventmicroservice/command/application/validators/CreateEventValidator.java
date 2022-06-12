@@ -23,10 +23,7 @@ public class CreateEventValidator {
         if (type.isEmpty()) {
             notification.addError("Event type is required");
         }
-        String cost = createEventRequest.getCost().trim();
-        if (cost.isEmpty()) {
-            notification.addError("Event cost is required");
-        }
+
 
         if (notification.hasErrors()) {
             return notification;

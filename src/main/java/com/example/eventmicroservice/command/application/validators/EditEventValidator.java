@@ -32,10 +32,7 @@ public class EditEventValidator {
         if (description.isEmpty()) {
             notification.addError("Event description is required");
         }
-        String cost = editEventRequest.getCost().trim();
-        if (cost.isEmpty()) {
-            notification.addError("Event cost is required");
-        }
+
         String type = editEventRequest.getType().trim();
         if (type.isEmpty()) {
             notification.addError("Event type is required");

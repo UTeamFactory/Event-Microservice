@@ -1,5 +1,6 @@
 package com.example.eventmicroservice.command.domain.entities;
 
+import com.example.eventmicroservice.command.domain.values.*;
 import com.example.eventmicroservice.contracts.commands.DeleteEvent;
 import com.example.eventmicroservice.contracts.commands.EditEvent;
 import com.example.eventmicroservice.contracts.commands.RegisterEvent;
@@ -11,8 +12,13 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.spring.stereotype.Aggregate;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 import java.time.Instant;
 import java.util.Calendar;
+import java.util.Date;
 
 import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 
@@ -21,14 +27,54 @@ public class Event {
 
     @AggregateIdentifier
     private String eventId;
-    private String artistId;
-    private String type;
-    private String description;
-    private Calendar dateTime;
-    private String cost;
-    private String image;
-    private String link;
-    private String capacity;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "artist_id", length = 100, nullable = false))
+    })
+    private ArtistId artistId;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "type", length = 100, nullable = false))
+    })
+    private Type type;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "description", length = 200, nullable = false))
+    })
+    private Description description;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "date_time", nullable = false))
+    })
+    private DateTime dateTime;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "cost", length = 5, nullable = false))
+    })
+    private Cost cost;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "image", length = 150, nullable = false))
+    })
+    private Image image;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "link", length = 150, nullable = false))
+    })
+    private Link link;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "capacity", length = 150, nullable = false))
+    })
+    private Capacity capacity;
 
     public Event(){}
 
@@ -84,26 +130,26 @@ public class Event {
     @EventSourcingHandler
     protected void on (EventRegistered event){
         eventId = event.getEventId();
-        artistId = event.getArtistId();
-        type = event.getType();
-        description = event.getDescription();
-        dateTime = event.getDateTime();
-        cost = event.getCost();
-        image = event.getImage();
-        link = event.getLink();
-        capacity = event.getCapacity();
+        artistId = new ArtistId(event.getArtistId());
+        type = new Type(event.getType());
+        description = new Description(event.getDescription());
+        dateTime = new DateTime(event.getDateTime());
+        cost = new Cost(event.getCost());
+        image = new Image(event.getImage());
+        link = new Link(event.getLink());
+        capacity = new Capacity(event.getCapacity());
     }
 
     @EventSourcingHandler
     protected void on (EventEdited event){
-        artistId = event.getArtistId();
-        type = event.getType();
-        description = event.getDescription();
-        dateTime = event.getDateTime();
-        cost = event.getCost();
-        image = event.getImage();
-        link = event.getLink();
-        capacity = event.getCapacity();
+        artistId = new ArtistId(event.getArtistId());
+        type = new Type(event.getType());
+        description = new Description(event.getDescription());
+        dateTime = new DateTime(event.getDateTime());
+        cost = new Cost(event.getCost());
+        image = new Image(event.getImage());
+        link = new Link(event.getLink());
+        capacity = new Capacity(event.getCapacity());
     }
 
     @EventSourcingHandler

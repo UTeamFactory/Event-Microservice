@@ -26,7 +26,7 @@ public class EventHistoryView {
     @Column() @Getter @Setter
     private Calendar dateTime;
     @Column() @Getter @Setter
-    private String cost;
+    private Double cost;
 
     @Column() @Getter @Setter
     private String image;
@@ -35,14 +35,14 @@ public class EventHistoryView {
     private String link;
 
     @Column() @Getter @Setter
-    private String capacity;
+    private Double capacity;
 
     @Getter @Setter
     private Instant createdAt;
 
     public EventHistoryView(){}
 
-    public EventHistoryView(String eventId, String type, String description, Calendar dateTime, String cost, String image, String link,  String capacity, Instant createdAt) {
+    public EventHistoryView(String eventId, String type, String description, Calendar dateTime, Double cost, String image, String link,  Double capacity, Instant createdAt) {
         this.eventId = eventId;
         this.type = type;
         this.description = description;

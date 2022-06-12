@@ -14,14 +14,14 @@ public class EventRegistry {
     private String type;
     private String description;
     private Calendar dateTime;
-    private String cost;
+    private Double cost;
     private String image;
     private String link;
-    private String capacity;
+    private Double capacity;
 
     public EventRegistry(){}
 
-    public EventRegistry(String eventId, String artistId, String type, String description, Calendar dateTime, String cost, String image, String link, String capacity) {
+    public EventRegistry(String eventId, String artistId, String type, String description, Calendar dateTime, Double cost, String image, String link, Double capacity) {
         this.eventId = eventId;
         this.artistId = artistId;
         this.type = type;
@@ -78,11 +78,11 @@ public class EventRegistry {
         return this;
     }
 
-    public String getCost() {
+    public Double getCost() {
         return cost;
     }
 
-    public EventRegistry setCost(String cost) {
+    public EventRegistry setCost(Double cost) {
         this.cost = cost;
         return this;
     }
@@ -105,11 +105,11 @@ public class EventRegistry {
         return this;
     }
 
-    public String getCapacity() {
+    public Double getCapacity() {
         return capacity;
     }
 
-    public EventRegistry setCapacity(String capacity) {
+    public EventRegistry setCapacity(Double capacity) {
         this.capacity = capacity;
         return this;
     }

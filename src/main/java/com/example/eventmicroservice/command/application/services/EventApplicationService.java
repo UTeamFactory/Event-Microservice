@@ -51,7 +51,7 @@ public class EventApplicationService {
                 createEventRequest.getType().trim(),
                 createEventRequest.getDescription().trim(),
                 createEventRequest.getDateTime(),
-                createEventRequest.getCost().trim(),
+                createEventRequest.getCost(),
                 createEventRequest.getImage().trim(),
                 createEventRequest.getLink().trim(),
                 createEventRequest.getCapacity()
@@ -87,7 +87,7 @@ public class EventApplicationService {
                 editEventRequest.getType().trim(),
                 editEventRequest.getDescription().trim(),
                 editEventRequest.getDateTime(),
-                editEventRequest.getCost().trim(),
+                editEventRequest.getCost(),
                 editEventRequest.getImage().trim(),
                 editEventRequest.getLink().trim(),
                 editEventRequest.getCapacity()
