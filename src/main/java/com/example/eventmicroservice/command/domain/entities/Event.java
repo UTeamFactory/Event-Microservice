@@ -1,7 +1,6 @@
 package com.example.eventmicroservice.command.domain.entities;
 
 import com.example.eventmicroservice.command.domain.values.*;
-import com.example.eventmicroservice.contracts.commands.DeleteEvent;
 import com.example.eventmicroservice.contracts.commands.EditEvent;
 import com.example.eventmicroservice.contracts.commands.RegisterEvent;
 import com.example.eventmicroservice.contracts.events.EventDeleted;
