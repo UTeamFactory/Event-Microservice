@@ -1,7 +1,6 @@
 package com.example.eventmicroservice.command.domain.entities;
 
 import com.example.eventcontracts.contracts.commands.DeleteEvent;
-import com.example.eventmicroservice.command.domain.values.*;
 import com.example.eventcontracts.contracts.commands.EditEvent;
 import com.example.eventcontracts.contracts.commands.RegisterEvent;
 import com.example.eventcontracts.contracts.events.EventDeleted;
@@ -12,13 +11,8 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.spring.stereotype.Aggregate;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
 import java.time.Instant;
 import java.util.Calendar;
-import java.util.Date;
 
 import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 
