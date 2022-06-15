@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>Event-Contracts</artifactId>
+            <artifactId>event-contracts</artifactId>
             <version>0.0.1</version>
         </dependency>
         <dependency>

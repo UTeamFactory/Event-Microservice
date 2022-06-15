@@ -1,8 +1,8 @@
 package com.example.eventmicroservice.query.projections;
 
-import com.example.eventmicroservice.contracts.events.EventDeleted;
-import com.example.eventmicroservice.contracts.events.EventEdited;
-import com.example.eventmicroservice.contracts.events.EventRegistered;
+import com.example.eventcontracts.contracts.events.EventDeleted;
+import com.example.eventcontracts.contracts.events.EventEdited;
+import com.example.eventcontracts.contracts.events.EventRegistered;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.stereotype.Component;
 

@@ -2,7 +2,9 @@ package com.example.eventmicroservice.command.application.handlers;
 
 import com.example.eventmicroservice.command.infrastructure.EventRegistry;
 import com.example.eventmicroservice.command.infrastructure.EventRegistryRepository;
-import com.example.
+import com.example.eventcontracts.contracts.events.EventRegistered;
+import com.example.eventcontracts.contracts.events.EventDeleted;
+import com.example.eventcontracts.contracts.events.EventEdited;
 
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
