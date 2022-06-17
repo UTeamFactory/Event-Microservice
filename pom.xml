@@ -8,11 +8,9 @@
         <version>2.7.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
+    <groupId>com.perustars</groupId>
     <artifactId>Event-Microservice</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>Event-Microservice</name>
-    <description>Event-Microservice</description>
+    <version>0.0.1</version>
     <properties>
         <java.version>11</java.version>
         <axon.version>4.5.9</axon.version>
@@ -20,7 +18,12 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.example</groupId>
+            <groupId>com.perustars</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.perustars</groupId>
             <artifactId>event-contracts</artifactId>
             <version>0.0.1</version>
         </dependency>
