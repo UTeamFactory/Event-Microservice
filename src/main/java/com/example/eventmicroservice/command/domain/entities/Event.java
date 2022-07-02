@@ -1,12 +1,12 @@
 package com.example.eventmicroservice.command.domain.entities;
 
 import com.example.eventmicroservice.command.domain.values.*;
-import com.example.eventmicroservice.contracts.commands.DeleteEvent;
-import com.example.eventmicroservice.contracts.commands.EditEvent;
-import com.example.eventmicroservice.contracts.commands.RegisterEvent;
-import com.example.eventmicroservice.contracts.events.EventDeleted;
-import com.example.eventmicroservice.contracts.events.EventEdited;
-import com.example.eventmicroservice.contracts.events.EventRegistered;
+import com.perustars.event.contracts.commands.DeleteEvent;
+import com.perustars.event.contracts.commands.EditEvent;
+import com.perustars.event.contracts.commands.RegisterEvent;
+import com.perustars.event.contracts.events.EventDeleted;
+import com.perustars.event.contracts.events.EventEdited;
+import com.perustars.event.contracts.events.EventRegistered;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;

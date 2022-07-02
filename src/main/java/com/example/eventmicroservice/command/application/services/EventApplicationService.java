@@ -13,9 +13,9 @@ import com.example.eventmicroservice.command.infrastructure.EventRegistryReposit
 import com.example.eventmicroservice.common.application.Notification;
 import com.example.eventmicroservice.common.application.Result;
 import com.example.eventmicroservice.common.application.ResultType;
-import com.example.eventmicroservice.contracts.commands.DeleteEvent;
-import com.example.eventmicroservice.contracts.commands.EditEvent;
-import com.example.eventmicroservice.contracts.commands.RegisterEvent;
+import com.perustars.event.contracts.commands.DeleteEvent;
+import com.perustars.event.contracts.commands.EditEvent;
+import com.perustars.event.contracts.commands.RegisterEvent;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.stereotype.Component;
 
